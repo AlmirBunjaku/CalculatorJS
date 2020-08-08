@@ -57,21 +57,21 @@ function changeExpressionOperation() {
                 }
                 break;
             case 'multiply':
-                if (!isNaN(expression.replace('**', '^').charAt(expression.replace('**', '^').length - 1))) {
+                if (!isNaN(expression.replace('**', '^').charAt(expression.replace('**', '^').length - 1)) && expression !== '') {
                     expression += '*';
                     document.querySelector('#expression').textContent = expression.replace('**', '^');
                     decimalCounter = 0;
                 }
                 break;
             case 'divide':
-                if (!isNaN(expression.replace('**', '^').charAt(expression.replace('**', '^').length - 1))) {
+                if (!isNaN(expression.replace('**', '^').charAt(expression.replace('**', '^').length - 1)) && expression !== '') {
                     expression += '/';
                     document.querySelector('#expression').textContent = expression.replace('**', '^');
                     decimalCounter = 0;
                 }
                 break;
             case 'power':
-                if (!isNaN(expression.replace('**', '^').charAt(expression.replace('**', '^').length - 1))) {
+                if (!isNaN(expression.replace('**', '^').charAt(expression.replace('**', '^').length - 1)) && expression !== '') {
                     expression += '**';
                     document.querySelector('#expression').textContent = expression.replace('**', '^');
                     decimalCounter = 0;
@@ -219,9 +219,5 @@ helpButton.addEventListener('mouseenter', () => {
 })
 
 helpButton.addEventListener('mouseleave', () => {
-    document.querySelector('#help-info').style.display = 'none';
-})
-
-helpButton.addEventListener('click', () => {
     document.querySelector('#help-info').style.display = 'none';
 })
